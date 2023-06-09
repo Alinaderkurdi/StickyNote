@@ -8,8 +8,8 @@
     box-sizing: border-box;
 }
 
-$button-width : 40px;
-$button-height : 40px;
+$button-width : 35px;
+$button-height : 35px;
 
 
 
@@ -18,20 +18,47 @@ $button-height : 40px;
    width: 100vw;
    height: 100vh;
    background-color: #FFFFFF;
+   min-width: 300px;
+
+   .settings-section{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-color: rgb(182, 178, 178);
+    z-index: -100;
+    opacity: 0;
+    display: flex;//
+    align-items: center;//
+    justify-content: space-between;//
+
+    .setting-head{
+        width: 100%;
+        height: 35px;
+        border: 1px solid;
+    }
+   }
 
    .head-section{
     width: 100%;
     height: 60px;
     border: 1px  solid;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex;//
+    align-items: center;//
+    justify-content: space-between;//
     
 
     .add-new-note-button{
         width: $button-width;
         height: $button-height;
+        background: none;//
+        border: none;//
+        outline: none;//
+        cursor: pointer;
         margin-left: 2px;
+        border-radius: 4px;
+        &:hover{//
+            background-color: antiquewhite;
+        }
 
         .bi-plus-lg{
             font-size: 1.5rem;
@@ -42,12 +69,31 @@ $button-height : 40px;
         width: 55px;
         height: 55px;
         border: 1px red solid;
+
+        .image-holder{
+            width: 50px;
+            height: 50px;
+            margin: 2px auto;
+            border: 1px greenyellow solid;
+            border-radius: 50px;
+            background-color: aqua;
+            cursor: pointer;
+        }
     }
 
     .settings-button{ 
         width: $button-width;
         height: $button-height;
+        background: none;//
+        border: none;//
+        outline: none;//
         margin-right: 2px;
+        cursor:pointer;//
+        border-radius: 4px;
+        &:hover{
+            background-color: antiquewhite;
+        }
+    
 
         .bi-gear{
             font-size: 1.3rem;
@@ -70,10 +116,39 @@ $button-height : 40px;
 
    .search-section{
     width: 100%;
-    height: 35px;
+    height: 40px;
     border: 1px red solid;
     margin-top: 6px;
-   }
 
+    .input-fild{
+      width: 70%;
+      height: 35px;
+      border-radius: 4px;
+      outline: none;
+      background: none;
+      margin-top: 4px;
+      border: none;
+      border: 1px solid;
+    }
+
+    .search-button{
+        width: 25px;
+        height: 25px;
+        margin-left: -35px;
+        background: none;//
+        border: none;//
+        outline: none;//
+        cursor: pointer;//
+        border: 1px solid;
+        border-radius: 4px;
+        &:hover{
+            background-color: antiquewhite;
+        }
+        
+        .bi-search{
+            font-size: 1rem;
+        }
+    }
+   }
 
 }
