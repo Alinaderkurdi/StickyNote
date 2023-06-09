@@ -1,3 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Barlow:ital,wght@1,100&family=Catamaran:wght@100;500;700;900&family=Courier+Prime&family=Dancing+Script:wght@700&family=Inconsolata:wght@300;400;500&family=Inter&family=M+PLUS+1p:wght@100;300;400;500&family=Manrope:wght@500&family=Martian+Mono:wght@200&family=Playfair+Display:ital,wght@0,400;1,500&family=Rajdhani:wght@300&family=Roboto+Mono:ital,wght@0,500;1,300;1,400&family=Roboto:wght@300;400&family=Sora:wght@200&family=Space+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
+#root-div {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFFFF; }
+  #root-div .head-section {
+    width: 100%;
+    height: 60px;
+    border: 1px  solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    #root-div .head-section .add-new-note-button {
+      width: 40px;
+      height: 40px;
+      margin-left: 2px; }
+      #root-div .head-section .add-new-note-button .bi-plus-lg {
+        font-size: 1.5rem; }
+    #root-div .head-section .user-profile-image {
+      width: 55px;
+      height: 55px;
+      border: 1px red solid; }
+    #root-div .head-section .settings-button {
+      width: 40px;
+      height: 40px;
+      margin-right: 2px; }
+      #root-div .head-section .settings-button .bi-gear {
+        font-size: 1.3rem; }
+  #root-div .app-name-section {
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    border: 1px red solid; }
+    #root-div .app-name-section .app-name-tag {
+      font-size: 1.4rem; }
+  #root-div .search-section {
+    width: 100%;
+    height: 35px;
+    border: 1px red solid;
+    margin-top: 6px; }
 
 /*# sourceMappingURL=style.css.map */

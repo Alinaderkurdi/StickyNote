@@ -1,3 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Barlow:ital,wght@1,100&family=Catamaran:wght@100;500;700;900&family=Courier+Prime&family=Dancing+Script:wght@700&family=Inconsolata:wght@300;400;500&family=Inter&family=M+PLUS+1p:wght@100;300;400;500&family=Manrope:wght@500&family=Martian+Mono:wght@200&family=Playfair+Display:ital,wght@0,400;1,500&family=Rajdhani:wght@300&family=Roboto+Mono:ital,wght@0,500;1,300;1,400&family=Roboto:wght@300;400&family=Sora:wght@200&family=Space+Mono&display=swap');
 
 //font family:
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$button-width : 40px;
+$button-height : 40px;
+
+
+
+
+#root-div{
+   width: 100vw;
+   height: 100vh;
+   background-color: #FFFFFF;
+
+   .head-section{
+    width: 100%;
+    height: 60px;
+    border: 1px  solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    .add-new-note-button{
+        width: $button-width;
+        height: $button-height;
+        margin-left: 2px;
+
+        .bi-plus-lg{
+            font-size: 1.5rem;
+        }
+    }
+
+    .user-profile-image{
+        width: 55px;
+        height: 55px;
+        border: 1px red solid;
+    }
+
+    .settings-button{ 
+        width: $button-width;
+        height: $button-height;
+        margin-right: 2px;
+
+        .bi-gear{
+            font-size: 1.3rem;
+        }
+    }
+
+   }
+
+   .app-name-section{
+    width: 100%;
+    height: 35px;
+    margin-top: 5px;
+    border: 1px red solid;
+
+    .app-name-tag{
+        font-size: 1.4rem;
+    }
+
+   }
+
+   .search-section{
+    width: 100%;
+    height: 35px;
+    border: 1px red solid;
+    margin-top: 6px;
+   }
+
+
+}
