@@ -17,9 +17,7 @@ body {
     width: inherit;
     height: inherit;
     position: absolute;
-    background-color: #b6b2b2;
-    z-index: -100;
-    opacity: 0; }
+    background-color: #FFFFFF; }
     #root-div .settings-section .setting-head {
       width: 100%;
       height: 40px;
@@ -39,8 +37,50 @@ body {
         #root-div .settings-section .setting-head .back-button .bi-arrow-left {
           font-size: 1.2rem; }
       #root-div .settings-section .setting-head .section-name {
-        color: #898989;
-        margin-right: 40%; }
+        color: black;
+        margin-right: 40%;
+        font-family: inherit;
+        font-size: 1rem;
+        cursor: default; }
+      #root-div .settings-section .setting-head .close-button {
+        width: 35px;
+        height: 35px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        outline: none; }
+        #root-div .settings-section .setting-head .close-button:hover {
+          background-color: #EEEEEE; }
+        #root-div .settings-section .setting-head .close-button .bi-x {
+          font-size: 1.4rem; }
+    #root-div .settings-section .sing-section {
+      width: 100%;
+      height: 120px;
+      border: 1px red solid;
+      margin-top: 20px; }
+      #root-div .settings-section .sing-section .sing-text {
+        color: black;
+        font-size: 1.1rem;
+        margin-left: 2px; }
+      #root-div .settings-section .sing-section .sing-link {
+        width: 100px;
+        height: 40px;
+        padding: 8px 6px;
+        color: white;
+        background-color: #007CBF;
+        text-decoration: none;
+        display: block;
+        margin-top: 16px;
+        margin-left: 10px;
+        text-align: center;
+        border-radius: 2px;
+        font-size: 1rem;
+        font-family: inherit; }
+    #root-div .settings-section .general-section {
+      width: 100%;
+      height: 130px;
+      border: 1px red solid;
+      margin-top: 10px; }
   #root-div .head-section {
     width: 100%;
     height: 60px;

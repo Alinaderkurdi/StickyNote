@@ -31,9 +31,9 @@ body{
     width: inherit;
     height: inherit;
     position: absolute;
-    background-color: rgb(182, 178, 178);
-    z-index: -100;
-    opacity: 0;
+    background-color: #FFFFFF;
+   // z-index: -100;
+    //opacity: 0;
 
     .setting-head{
         width: 100%;
@@ -60,9 +60,65 @@ body{
         }
 
         .section-name{
-            color: #898989;
+            color: black;
             margin-right: 40%;
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: default;
         }
+
+        .close-button{
+            width: $button-width;
+            height: $button-height;
+            border: none;//
+            background: none;//
+            cursor: pointer;//
+            outline: none;//
+            &:hover{
+                background-color: $button-hover-bkColor
+            }
+
+            .bi-x{
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .sing-section{
+        width: 100%;
+        height: 120px;
+        border: 1px red solid;
+        margin-top: 20px;
+
+        .sing-text{
+            color: black;
+            font-size: 1.1rem;
+            margin-left: 2px;
+        }
+
+        .sing-link{
+            width: 100px;
+            height: 40px;
+            padding: 8px 6px;
+            color:white;
+            background-color: #007CBF;
+            text-decoration: none;
+            display: block;
+            margin-top: 16px;
+            margin-left: 10px;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+    }
+
+
+    .general-section{
+        width: 100%;
+        height: 130px;
+        border: 1px red solid;
+        margin-top: 10px;
     }
    }
 
