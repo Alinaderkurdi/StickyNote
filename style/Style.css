@@ -19,8 +19,9 @@ body {
     min-width: 270px;
     max-width: 360px;
     background-color: #F3F2F1;
+    border: 0.5px red solid;
     position: absolute;
-    z-index: -200;
+    z-index: 100;
     opacity: 1;
     margin-left: 5%;
     margin-top: 100px;
@@ -36,38 +37,131 @@ body {
       #root-div .add-new-note-section .add-new-head-section .add-another-note-bt {
         width: 30px;
         height: 30px;
+        border-radius: 8px 0px 0px 0px;
         border: none;
         background: none;
         outline: none;
-        cursor: pointer;
-        border-radius: 8px 0px 0px 0px; }
-        #root-div .add-new-note-section .add-new-head-section .add-another-note-bt .bi-plus-lg {
-          font-size: 1.1rem; }
+        cursor: pointer; }
         #root-div .add-new-note-section .add-new-head-section .add-another-note-bt:hover {
           background-color: #EEEEEE; }
+        #root-div .add-new-note-section .add-new-head-section .add-another-note-bt .bi-plus-lg {
+          font-size: 1.1rem; }
       #root-div .add-new-note-section .add-new-head-section .option-button {
         width: 30px;
         height: 30px;
-        background: none;
         border: none;
+        background: none;
         outline: none;
         cursor: pointer; }
-        #root-div .add-new-note-section .add-new-head-section .option-button .bi-three-dots {
-          font-size: 1rem; }
         #root-div .add-new-note-section .add-new-head-section .option-button:hover {
           background-color: #EEEEEE; }
+        #root-div .add-new-note-section .add-new-head-section .option-button .bi-three-dots {
+          font-size: 1rem; }
       #root-div .add-new-note-section .add-new-head-section .close-button {
         width: 30px;
         height: 30px;
+        border: none;
         background: none;
         outline: none;
-        border: none;
         cursor: pointer;
         border-radius: 0px 8px 0px 0px; }
-        #root-div .add-new-note-section .add-new-head-section .close-button .bi-x {
-          font-size: 1.2rem; }
         #root-div .add-new-note-section .add-new-head-section .close-button:hover {
           background-color: #EEEEEE; }
+        #root-div .add-new-note-section .add-new-head-section .close-button .bi-x {
+          font-size: 1.2rem; }
+    #root-div .add-new-note-section .input-fild {
+      width: 99%;
+      height: 230px;
+      margin-left: 1.5px; }
+      #root-div .add-new-note-section .input-fild .get-note {
+        resize: none;
+        appearance: none;
+        outline: none;
+        font-size: 1.2rem;
+        font-family: inherit;
+        background: none;
+        width: 100%;
+        height: 229px; }
+        #root-div .add-new-note-section .input-fild .get-note::placeholder {
+          font-size: 1rem;
+          font-family: inherit; }
+    #root-div .add-new-note-section .option-section {
+      width: 99%;
+      height: 39px;
+      margin-left: 1.5px;
+      border: 1px solid;
+      border-radius: 0px 0px 8px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      #root-div .add-new-note-section .option-section .bold-button {
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 0px 0px 0px 8px; }
+        #root-div .add-new-note-section .option-section .bold-button:hover {
+          background-color: #EEEEEE; }
+        #root-div .add-new-note-section .option-section .bold-button .bi-type-bold {
+          font-size: 1.1rem; }
+      #root-div .add-new-note-section .option-section .italic-button {
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer; }
+        #root-div .add-new-note-section .option-section .italic-button:hover {
+          background-color: #EEEEEE; }
+        #root-div .add-new-note-section .option-section .italic-button .bi-type-italic {
+          font-size: 1.8rem; }
+      #root-div .add-new-note-section .option-section .under-line-button {
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer; }
+        #root-div .add-new-note-section .option-section .under-line-button:hover {
+          background-color: #EEEEEE; }
+        #root-div .add-new-note-section .option-section .under-line-button .bi-type-underline {
+          font-size: 1.1rem; }
+      #root-div .add-new-note-section .option-section .list-button {
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer; }
+        #root-div .add-new-note-section .option-section .list-button:hover {
+          background-color: #EEEEEE; }
+        #root-div .add-new-note-section .option-section .list-button .bi-list-ul {
+          font-size: 1.1rem; }
+      #root-div .add-new-note-section .option-section .add-image-button {
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer; }
+        #root-div .add-new-note-section .option-section .add-image-button:hover {
+          background-color: #EEEEEE; }
+        #root-div .add-new-note-section .option-section .add-image-button .bi-image-fill {
+          font-size: 1.1rem; }
+      #root-div .add-new-note-section .option-section .add-voice {
+        width: 38px;
+        height: 38px;
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 0px 0px 8px 0px; }
+        #root-div .add-new-note-section .option-section .add-voice:hover {
+          background-color: #EEEEEE; }
+        #root-div .add-new-note-section .option-section .add-voice .bi-mic {
+          font-size: 1.1rem; }
   #root-div .settings-section {
     width: inherit;
     height: inherit;
@@ -86,9 +180,9 @@ body {
       #root-div .settings-section .setting-head .back-button {
         width: 35px;
         height: 35px;
+        border: none;
         background: none;
         outline: none;
-        border: none;
         cursor: pointer; }
         #root-div .settings-section .setting-head .back-button:hover {
           background-color: #EEEEEE; }
@@ -105,8 +199,8 @@ body {
         height: 35px;
         border: none;
         background: none;
-        cursor: pointer;
-        outline: none; }
+        outline: none;
+        cursor: pointer; }
         #root-div .settings-section .setting-head .close-button:hover {
           background-color: #EEEEEE; }
         #root-div .settings-section .setting-head .close-button .bi-x {
@@ -148,8 +242,8 @@ body {
     #root-div .head-section .add-new-note-button {
       width: 35px;
       height: 35px;
-      background: none;
       border: none;
+      background: none;
       outline: none;
       cursor: pointer;
       margin-left: 2px;
@@ -173,12 +267,12 @@ body {
     #root-div .head-section .settings-button {
       width: 35px;
       height: 35px;
-      background: none;
-      border: none;
-      outline: none;
       margin-right: 2px;
-      cursor: pointer;
-      border-radius: 4px; }
+      border-radius: 4px;
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer; }
       #root-div .head-section .settings-button:hover {
         background-color: #EEEEEE; }
       #root-div .head-section .settings-button .bi-gear {
@@ -213,32 +307,14 @@ body {
       width: 30px;
       height: 30px;
       margin-left: -35px;
-      background: none;
+      border-radius: 4px;
       border: none;
+      background: none;
       outline: none;
-      cursor: pointer;
-      border-radius: 4px; }
+      cursor: pointer; }
       #root-div .search-section .search-button:hover {
         background-color: #EEEEEE; }
       #root-div .search-section .search-button .bi-search {
         font-size: 1rem; }
-  #root-div .note-holder {
-    width: 98%;
-    height: 600px;
-    border: 1px red solid;
-    margin-top: 4px;
-    background-color: inherit; }
-    #root-div .note-holder .ul-test {
-      width: 99%;
-      height: 500px;
-      border: 1px aqua solid;
-      overflow: scroll; }
-      #root-div .note-holder .ul-test::-webkit-scrollbar-thumb {
-        appearance: none; }
-      #root-div .note-holder .ul-test .il-test {
-        width: 90%;
-        height: 100px;
-        background-color: red;
-        margin-top: 4px; }
 
 /*# sourceMappingURL=style.css.map */

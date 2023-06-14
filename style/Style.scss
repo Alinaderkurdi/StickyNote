@@ -10,7 +10,17 @@
 
 $button-width : 35px;
 $button-height : 35px;
+
 $button-hover-bkColor: #EEEEEE;
+
+$addNewNoteOptionSectionWidth: 38px;
+$addNewNoteOptionSectionHight : 38px;
+
+$addNewNoteLeftButtonBorderRadus : 8px 0px 0px 0px;
+$addNewNoteRightButtonBorderRadus : 0px 8px 0px 0px;
+
+$addNewNoteSectionIconeSize : 1.1rem;
+
 
 
 //button commen style !
@@ -27,6 +37,18 @@ body{
 }
 
 
+@mixin buttonStyle(){
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $button-hover-bkColor; 
+    }
+
+}
+
 
 #root-div{
    width: 100vw;
@@ -42,9 +64,9 @@ body{
     min-width: 270px;
     max-width: 360px;
     background-color: #F3F2F1;
-    //border: 1px red solid;
+    border: 0.5px red solid;
     position: absolute;
-    z-index: -200;
+    z-index: 100;
     opacity: 1;
     margin-left: 5%;
     margin-top: 100px;
@@ -54,66 +76,139 @@ body{
         width: 100%;
         height: 30px;
         background-color:#E1DFDD;
-        border-radius: 8px 8px 0px 0px;
+        border-radius: 8px 8px 0px 0px;///
         @include alignItems();
         
         
         .add-another-note-bt{
-            width: 30px;
+            width: 30px;//this tow add to mixin fuction later
             height: 30px;
-            border: none;//
-            background: none;//
-            outline: none;//
-            cursor: pointer;
-            border-radius: 8px 0px 0px 0px;
+          //  border-radius: 8px 0px 0px 0px;
+            border-radius: $addNewNoteLeftButtonBorderRadus;
+            @include buttonStyle();
 
             .bi-plus-lg{
                 font-size: 1.1rem;
             }
 
-            &:hover{//
-              background-color: $button-hover-bkColor;
-            }
         }
 
         .option-button{
             width: 30px;
             height: 30px;
-            background: none;//
-            border: none;//
-            outline: none;//
-            cursor: pointer;//
-         //   background-color: #c16969;
-           // margin-left: 207px;
+            @include buttonStyle();
 
             .bi-three-dots{
                 font-size: 1rem;
-            }
-
-            &:hover{
-                background-color: $button-hover-bkColor;
             }
         }
 
         .close-button{
             width: 30px;//difine a var for this button
             height: 30px;//
-            background: none;//
-            outline: none;//
-            border: none;
-            cursor: pointer;//
-           // background-color: #c16969;
-            border-radius: 0px 8px 0px 0px;
+            @include buttonStyle();
+            border-radius: $addNewNoteRightButtonBorderRadus;
 
             .bi-x{
                 font-size: 1.2rem;
             }
+        }
+    }
 
-            &:hover{
-                background-color: $button-hover-bkColor;
+    .input-fild{
+        width: 99%;
+        height: 230px;
+       // border: 1px red solid;
+        margin-left: 1.5px;
+
+        .get-note{
+            resize: none;
+            appearance: none;
+            outline: none;
+            font-size: 1.2rem;
+            font-family: inherit;
+            background: none;
+            width: 100%;
+            height: 229px;
+
+            &::placeholder{
+                font-size: 1rem;
+                font-family: inherit;
+            }
+        }
+
+    }
+
+    .option-section{
+        width: 99%; 
+        height: 39px;
+        margin-left: 1.5px;
+        border: 1px solid;
+        border-radius: 0px 0px 8px 8px;////
+        @include alignItems();
+
+        .bold-button{
+            width: $addNewNoteOptionSectionWidth;
+            height: $addNewNoteOptionSectionHight;
+            @include buttonStyle();
+            border-radius: 0px 0px 0px 8px ;
+
+            .bi-type-bold{
+                font-size: $addNewNoteSectionIconeSize;
+            }
+        }
+
+        .italic-button{
+            width: $addNewNoteOptionSectionWidth;
+            height: $addNewNoteOptionSectionHight;
+            @include buttonStyle();
+
+            .bi-type-italic{
+               font-size: 1.8rem;
+            }
+        }
+
+        .under-line-button{
+            width: $addNewNoteOptionSectionHight;
+            height: $addNewNoteOptionSectionWidth;
+            @include buttonStyle();
+
+            .bi-type-underline{
+                font-size: $addNewNoteSectionIconeSize;
+            }
+        }
+
+        .list-button{
+            width: $addNewNoteOptionSectionWidth;
+            height: $addNewNoteOptionSectionHight;
+            @include buttonStyle();
+
+            .bi-list-ul{
+                font-size: $addNewNoteSectionIconeSize;
+            }
+        }
+
+        .add-image-button{
+            width: $addNewNoteOptionSectionWidth;
+            height: $addNewNoteOptionSectionHight;
+            @include buttonStyle();
+
+            .bi-image-fill{
+                font-size: $addNewNoteSectionIconeSize;
+            }
+        }
+
+        .add-voice{
+            width: $addNewNoteOptionSectionWidth;
+            height: $addNewNoteOptionSectionHight;
+            @include buttonStyle();
+            border-radius: 0px 0px 8px 0px;//
+            .bi-mic{
+                font-size: $addNewNoteSectionIconeSize;
             }
         }
     }
+
    }
 
    .settings-section{
@@ -134,13 +229,7 @@ body{
         .back-button{
             width: $button-width;
             height: $button-height;
-            background: none;//
-            outline: none;//
-            border: none;//
-            cursor: pointer;//
-            &:hover{//
-                background-color: $button-hover-bkColor
-            }
+            @include buttonStyle();
 
             .bi-arrow-left{
                 font-size: 1.2rem;
@@ -158,13 +247,7 @@ body{
         .close-button{
             width: $button-width;
             height: $button-height;
-            border: none;//
-            background: none;//
-            cursor: pointer;//
-            outline: none;//
-            &:hover{
-                background-color: $button-hover-bkColor
-            }
+            @include buttonStyle();
 
             .bi-x{
                 font-size: 1.4rem;
@@ -219,15 +302,9 @@ body{
     .add-new-note-button{
         width: $button-width;
         height: $button-height;
-        background: none;//
-        border: none;//
-        outline: none;//
-        cursor: pointer;
+        @include buttonStyle();
         margin-left: 2px;
         border-radius: 4px;
-        &:hover{//
-            background-color: $button-hover-bkColor
-        }
 
         .bi-plus-lg{
             font-size: 1.5rem;
@@ -255,15 +332,9 @@ body{
     .settings-button{ 
         width: $button-width;
         height: $button-height;
-        background: none;//
-        border: none;//
-        outline: none;//
         margin-right: 2px;
-        cursor:pointer;//
         border-radius: 4px;
-        &:hover{
-            background-color: $button-hover-bkColor;
-        }
+        @include buttonStyle();
     
 
         .bi-gear{
@@ -315,14 +386,8 @@ body{
         width: 30px;
         height: 30px;
         margin-left: -35px;
-        background: none;//
-        border: none;//
-        outline: none;//
-        cursor: pointer;//
         border-radius: 4px;
-        &:hover{
-            background-color: $button-hover-bkColor;
-        }
+        @include buttonStyle();
         
         .bi-search{
             font-size: 1rem;
@@ -330,30 +395,30 @@ body{
     }
    }
 
-   .note-holder{
-    width: 98%;
-    height: 600px;
-    border: 1px red solid;
-    margin-top: 4px;
-    background-color: inherit;
-    
+  //.note-holder{
+  // width: 98%;
+  // height: 600px;
+  // border: 1px red solid;
+  // margin-top: 4px;
+  // background-color: inherit;
+  // 
 
-    .ul-test{
-        width: 99%;
-        height: 500px;
-        border: 1px aqua solid;
-        overflow: scroll;
+  // .ul-test{
+  //     width: 99%;
+  //     height: 500px;
+  //     border: 1px aqua solid;
+  //     overflow: scroll;
 
-        &::-webkit-scrollbar-thumb{
-            appearance: none;
-        }
+  //     &::-webkit-scrollbar-thumb{
+  //         appearance: none;
+  //     }
 
-        .il-test{
-            width: 90%;
-            height: 100px;
-            background-color: red;
-            margin-top: 4px;
-        }
-    }
-   }
+  //     .il-test{
+  //         width: 90%;
+  //         height: 100px;
+  //         background-color: red;
+  //         margin-top: 4px;
+  //     }
+  // }
+  //}
 }
