@@ -19,6 +19,15 @@ body{
 }
 
 
+
+@mixin alignItems(){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
 #root-div{
    width: 100vw;
    height: 100vh;
@@ -35,7 +44,7 @@ body{
     background-color: #F3F2F1;
     //border: 1px red solid;
     position: absolute;
-    z-index: 100;
+    z-index: -200;
     opacity: 1;
     margin-left: 5%;
     margin-top: 100px;
@@ -46,11 +55,9 @@ body{
         height: 30px;
         background-color:#E1DFDD;
         border-radius: 8px 8px 0px 0px;
-        display: flex;//
-        align-items: center;//
-        justify-content: space-between;//
+        @include alignItems();
         
-
+        
         .add-another-note-bt{
             width: 30px;
             height: 30px;
@@ -114,6 +121,7 @@ body{
     height: inherit;
     position: absolute;
     background-color: #FFFFFF;
+    max-width: 600px;
     z-index: -100;
     opacity: 0;
 
@@ -121,9 +129,7 @@ body{
         width: 100%;
         height: 40px;
         border: 1px black solid ;
-        display: flex;//
-        align-items: center;//
-        justify-content: space-between;//
+        @include alignItems();
 
         .back-button{
             width: $button-width;
@@ -198,7 +204,7 @@ body{
 
     .general-section{
         width: 100%;
-        height: 130px;
+        height: 280px;
         border: 1px red solid;
         margin-top: 10px;
     }
@@ -208,11 +214,8 @@ body{
     width: 100%;
     height: 60px;
     //border: 1px  solid;
-    display: flex;//
-    align-items: center;//
-    justify-content: space-between;//
+    @include alignItems();
     
-
     .add-new-note-button{
         width: $button-width;
         height: $button-height;
@@ -327,4 +330,30 @@ body{
     }
    }
 
+   .note-holder{
+    width: 98%;
+    height: 600px;
+    border: 1px red solid;
+    margin-top: 4px;
+    background-color: inherit;
+    
+
+    .ul-test{
+        width: 99%;
+        height: 500px;
+        border: 1px aqua solid;
+        overflow: scroll;
+
+        &::-webkit-scrollbar-thumb{
+            appearance: none;
+        }
+
+        .il-test{
+            width: 90%;
+            height: 100px;
+            background-color: red;
+            margin-top: 4px;
+        }
+    }
+   }
 }

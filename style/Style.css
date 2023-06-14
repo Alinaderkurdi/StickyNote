@@ -20,7 +20,7 @@ body {
     max-width: 360px;
     background-color: #F3F2F1;
     position: absolute;
-    z-index: 100;
+    z-index: -200;
     opacity: 1;
     margin-left: 5%;
     margin-top: 100px;
@@ -73,6 +73,7 @@ body {
     height: inherit;
     position: absolute;
     background-color: #FFFFFF;
+    max-width: 600px;
     z-index: -100;
     opacity: 0; }
     #root-div .settings-section .setting-head {
@@ -135,7 +136,7 @@ body {
         font-family: inherit; }
     #root-div .settings-section .general-section {
       width: 100%;
-      height: 130px;
+      height: 280px;
       border: 1px red solid;
       margin-top: 10px; }
   #root-div .head-section {
@@ -221,5 +222,23 @@ body {
         background-color: #EEEEEE; }
       #root-div .search-section .search-button .bi-search {
         font-size: 1rem; }
+  #root-div .note-holder {
+    width: 98%;
+    height: 600px;
+    border: 1px red solid;
+    margin-top: 4px;
+    background-color: inherit; }
+    #root-div .note-holder .ul-test {
+      width: 99%;
+      height: 500px;
+      border: 1px aqua solid;
+      overflow: scroll; }
+      #root-div .note-holder .ul-test::-webkit-scrollbar-thumb {
+        appearance: none; }
+      #root-div .note-holder .ul-test .il-test {
+        width: 90%;
+        height: 100px;
+        background-color: red;
+        margin-top: 4px; }
 
 /*# sourceMappingURL=style.css.map */
