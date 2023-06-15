@@ -63,8 +63,8 @@ body{
     background-color: #F3F2F1;
     border: 0.5px red solid;
     position: absolute;
-    z-index: -100;
-    opacity: 0;
+    z-index: 100;
+    opacity: 1;
     margin-left: 5%;
     margin-top: 100px;
     border-radius: 8px;
@@ -212,16 +212,16 @@ body{
     width: inherit;
     height: inherit;
     position: absolute;
-    background-color: #FFFFFF;
+    background-color: inherit;
     max-width: 600px;
-    z-index: 100;
-    opacity: 1;
+    z-index: -100;
+    opacity: 0;
     border: 1px solid;
 
      .setting-head{
          width: $settingSectionWidth;
          height: 40px;
-         border: 1px black solid ;
+        // border: 1px black solid ;
          @include alignItems();
  
          .back-button{
@@ -236,7 +236,7 @@ body{
  
          .section-name{
              color: black;//
-             margin-right: 40%;//
+             margin-left: -150px;
              font-family: inherit;//
              font-size: 1rem;//
              cursor: default;
@@ -256,7 +256,7 @@ body{
     .sing-section{
         width: $settingSectionWidth;
         height: 100px;
-        border: 1px red solid;
+     //   border: 1px red solid;
         margin-top: 5px;
 
         .sing-text{
@@ -287,7 +287,7 @@ body{
     .general-section{
         width: $settingSectionWidth;
         height: 180px;
-        border: 1px red solid;
+      //  border: 1px red solid;
         margin-top: 5px;
 
         .section-name{
@@ -298,7 +298,7 @@ body{
     .color-theme-section{
         width: $settingSectionWidth;
         height: 200px;
-        border: 1px red solid;
+      //  border: 1px red solid;
         margin-top: 10px;
 
         .color-section-name{
@@ -308,8 +308,8 @@ body{
 
     .about-me-section{
         width: $settingSectionWidth;
-        height: 248px;
-        border: 1px solid;
+        height: 246px;
+      //  border: 1px solid;
 
         .about-section-name{
             @extend .sections-name-commn-style;
