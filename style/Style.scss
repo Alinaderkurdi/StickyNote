@@ -63,7 +63,7 @@ body{
     background-color: #F3F2F1;
     border: 0.5px red solid;
     position: absolute;
-    z-index: 100;
+    z-index: -100;
     opacity: 1;
     margin-left: 5%;
     margin-top: 100px;
@@ -399,6 +399,7 @@ body{
         font-size: 1.4rem;
         font-family: inherit;
         cursor: default;
+        margin-left: 10px;
     }
 
    }
@@ -410,13 +411,13 @@ body{
     margin-top: 4px;
 
     .input-fild{
-      width: 98%;
+      width: 95%;
       height: 35px;
       border-radius: 2px;
       outline: none;
       background: none;
       margin-top: 4px;
-      margin-left: 2px;
+      margin-left: 10px;
       border: none;
       background-color: #EEEEEE;
       font-family: inherit;
@@ -440,30 +441,67 @@ body{
     }
    }
 
-  //.note-holder{
-  // width: 98%;
-  // height: 600px;
-  // border: 1px red solid;
-  // margin-top: 4px;
-  // background-color: inherit;
-  // 
+   .note-holder-section{
+    width: 100%;
+    height: 633px;
+   // border: 1px solid;
+    margin-top: 20px;
+    background-color: inherit;
 
-  // .ul-test{
-  //     width: 99%;
-  //     height: 500px;
-  //     border: 1px aqua solid;
-  //     overflow: scroll;
+    .note-holder{
+        width: 99%;
+        height: 630px;
+      //  border: 1px red solid;
+        margin: 0px auto;
+        overflow: scroll;
+        overflow-x: hidden;
+        &::-webkit-scrollbar{
+            width: 4px;
+            height: 30px;
+            border-radius: 20px;
+            background-color: #FFFFFF;
+        };
+        
+        &::-webkit-scrollbar-thumb{
+            width: 5px;
+            height: 5px;
+            border-radius: 20px;
+            background-color: #696868;
+        };
 
-  //     &::-webkit-scrollbar-thumb{
-  //         appearance: none;
-  //     }
+        &:hover::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        };
 
-  //     .il-test{
-  //         width: 90%;
-  //         height: 100px;
-  //         background-color: red;
-  //         margin-top: 4px;
-  //     }
-  // }
-  //}
+        .singel-note{
+            width: 97%;
+            height: 80px;
+            background-color: #E2F1FF;
+            margin: 6px auto;
+            margin-bottom: 0px;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 20% 80%;
+
+            
+            .note-date{
+                font-size: 0.8rem;
+                font-family: inherit;
+                color: #777777;
+                grid-row: 1/2;
+                margin-left: 88%;
+                cursor: default;
+            }
+
+            .content{
+                color: black;
+                grid-row: 2/3;
+                margin-left: 4px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+   }
 }
