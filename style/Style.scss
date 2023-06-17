@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 
+
 $button-width : 35px;
 $button-height : 35px;
 
@@ -57,17 +58,19 @@ body{
 
    .add-new-note-section{
     width:90%;
-    height: 300px;
+    height: 302px;
     min-width: 270px;
     max-width: 360px;
     background-color: #F3F2F1;
-    border: 0.5px red solid;
+    border: 1px #008bd5 solid;
     position: absolute;
     z-index: -100;
     opacity: 1;
     margin-left: 5%;
     margin-top: 100px;
     border-radius: 8px;
+    box-shadow: 20px 20px 60px grey;
+
 
     .add-new-head-section{
         width: 100%;
@@ -75,6 +78,7 @@ body{
         background-color:#E1DFDD;
         border-radius: 8px 8px 0px 0px;///
         @include alignItems();
+        
         
         
         .add-another-note-bt{
@@ -93,6 +97,7 @@ body{
         .option-button{
             width: 30px;
             height: 30px;
+            margin-left: 72%;
             @include buttonStyle();
 
             .bi-three-dots{
@@ -125,6 +130,7 @@ body{
             font-size: 1.2rem;
             font-family: inherit;
             background: none;
+            border: none;
             width: 100%;
             height: 229px;
 
@@ -137,10 +143,10 @@ body{
     }
 
     .option-section{
-        width: 99%; 
+        width: 100%; 
         height: 39px;
-        margin-left: 1.5px;
-        border: 1px solid;
+        //margin-left: 1.5px;
+        border-top: 1px  #777777 solid;
         border-radius: 0px 0px 8px 8px;////
         @include alignItems();
 
@@ -214,8 +220,8 @@ body{
     position: absolute;
     background-color: inherit;
     max-width: 600px;
-    z-index: -100;
-    opacity: 0;
+    z-index: 100;
+    opacity: 1;
     border: 1px solid;
 
      .setting-head{
@@ -236,7 +242,8 @@ body{
  
          .section-name{
              color: black;//
-             margin-left: -150px;
+            // margin-left: -150px;
+             margin-left: 50%;
              font-family: inherit;//
              font-size: 1rem;//
              cursor: default;
@@ -289,6 +296,60 @@ body{
         height: 180px;
       //  border: 1px red solid;
         margin-top: 5px;
+
+        label{
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        input[type="checkbox"]{
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          -webkit-tap-highlight-color: transparent;
+          display: block;
+          margin-left: 10px;
+             cursor: pointer;
+             &:focus{
+                outline: 0
+            }   
+        }
+
+        .toggle{
+            height: 22px;
+            width: 50px;
+            border-radius: 16px;
+            display: inline-block;
+            position: relative;
+            margin: 0;
+            border: 3px solid #000000;
+           // background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%);
+            background-color: #000000;
+            transition: all .2s ease;
+
+            &:after{
+                 content: '';
+              position: absolute;
+              top: 3px;
+              left: 2px;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background: #FFFFFF;
+              box-shadow: 0 1px 2px rgba(44,44,44,.2);
+              transition: all .2s cubic-bezier(.5,.1,.75,1.35);
+            };
+             
+            &:checked{
+                border-color: #007CBF;
+                background-color: #008bd5;
+                
+
+              &:after{
+                transform: translatex(27px);
+              }
+            }
+        }
 
         .section-name{
             @extend .sections-name-commn-style;
@@ -461,7 +522,7 @@ body{
             border-radius: 20px;
             background-color: #FFFFFF;
         };
-        
+
         &::-webkit-scrollbar-thumb{
             width: 5px;
             height: 5px;
