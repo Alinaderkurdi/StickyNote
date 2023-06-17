@@ -173,6 +173,9 @@ body {
     z-index: 100;
     opacity: 1;
     border: 1px solid; }
+    #root-div .settings-section hr {
+      width: 50%;
+      margin-left: 20%; }
     #root-div .settings-section .setting-head {
       width: 100%;
       height: 40px;
@@ -322,13 +325,13 @@ body {
           transform: scale(0.4); }
     #root-div .settings-section .about-me-section {
       width: 100%;
-      height: 246px; }
+      height: 240px; }
       #root-div .settings-section .about-me-section a {
         display: inline-block;
-        margin-left: 50px;
+        margin-left: 10px;
         margin-top: 50px;
         cursor: pointer;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         text-decoration: none;
         text-decoration: none; }
     #root-div .settings-section .sections-name-commn-style, #root-div .settings-section .general-section .section-name, #root-div .settings-section .color-theme-section .color-section-name, #root-div .settings-section .about-me-section .about-section-name {
