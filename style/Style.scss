@@ -25,6 +25,13 @@ $addNewNoteSectionIconeSize : 1.1rem;
 
 $settingSectionWidth : 100%;
 
+$settingSectionMarginLeft : 10px;
+
+
+$radioSize: 22px;
+$radioBorder: #D1D7E3;
+$radioActive: #5D9BFB;
+
 
 body{
     font-family:  'Catamaran', sans-serif;
@@ -269,7 +276,8 @@ body{
         .sing-text{
             color: black;
             font-size: 1.1rem;
-            margin-left: 2px;
+            margin-left: $settingSectionMarginLeft;
+           // margin-left: 10px;//
             cursor: default
         }
 
@@ -282,7 +290,8 @@ body{
             text-decoration: none;
             display: block;
             margin-top: 16px;
-            margin-left: 10px;
+           // margin-left: 10px;//
+            margin-left: $settingSectionMarginLeft;
             text-align: center;
             border-radius: 2px;
             font-size: 1rem;
@@ -298,7 +307,8 @@ body{
         margin-top: 5px;
 
         label{
-            margin-left: 10px;
+            //margin-left: 10px;//
+            margin-left: $settingSectionMarginLeft;
             margin-top: 10px;
         }
 
@@ -308,8 +318,10 @@ body{
           appearance: none;
           -webkit-tap-highlight-color: transparent;
           display: block;
-          margin-left: 10px;
-             cursor: pointer;
+          //margin-left: 10px;
+          margin-left: $settingSectionMarginLeft;
+
+            cursor: pointer;
              &:focus{
                 outline: 0
             }   
@@ -365,6 +377,75 @@ body{
         .color-section-name{
             @extend .sections-name-commn-style;
         }
+
+        .radio {
+            margin: 16px 0;
+            display: block;
+           // margin-left: 10px;//
+            margin-left: $settingSectionMarginLeft;
+            cursor: pointer;
+            input {
+                display: none;
+                & + span {
+                    line-height: $radioSize;
+                    height: $radioSize;
+                    padding-left: $radioSize;
+                    display: block;
+                    position: relative;
+                    &:not(:empty) {
+                        padding-left: $radioSize + 8;
+                    }
+                    &:before,
+                    &:after {
+                        content: '';
+                        width: $radioSize;
+                        height: $radioSize;
+                        display: block;
+                        border-radius: 50%;
+                        left: 0;
+                        top: 0;
+                        position: absolute;
+                    }
+                    &:before {
+                        background: $radioBorder;
+                        transition: background .2s ease, transform .4s cubic-bezier(.175, .885, .32, 2);
+                    }
+                    &:after {
+                        background: #fff;
+                        transform: scale(.78);
+                        transition: transform .6s cubic-bezier(.175, .885, .32, 1.4);
+                    }
+                }
+                &:checked + span {
+                    &:before {
+                        transform: scale(1.04);
+                        background: $radioActive;
+                    }
+                    &:after {
+                        transform: scale(.4);
+                        transition: transform .3s ease;
+                    }
+                }
+            }
+            &:hover {
+                input {
+                    & + span {
+                        &:before {
+                            transform: scale(.92);
+                        }
+                        &:after {
+                            transform: scale(.74);
+                        }
+                    }
+                    &:checked + span {
+                        &:after {
+                            transform: scale(.4);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 
     .about-me-section{

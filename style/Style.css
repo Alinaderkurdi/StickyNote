@@ -214,7 +214,7 @@ body {
       #root-div .settings-section .sing-section .sing-text {
         color: black;
         font-size: 1.1rem;
-        margin-left: 2px;
+        margin-left: 10px;
         cursor: default; }
       #root-div .settings-section .sing-section .sing-link {
         width: 100px;
@@ -277,6 +277,49 @@ body {
       width: 100%;
       height: 200px;
       margin-top: 10px; }
+      #root-div .settings-section .color-theme-section .radio {
+        margin: 16px 0;
+        display: block;
+        margin-left: 10px;
+        cursor: pointer; }
+        #root-div .settings-section .color-theme-section .radio input {
+          display: none; }
+          #root-div .settings-section .color-theme-section .radio input + span {
+            line-height: 22px;
+            height: 22px;
+            padding-left: 22px;
+            display: block;
+            position: relative; }
+            #root-div .settings-section .color-theme-section .radio input + span:not(:empty) {
+              padding-left: 30px; }
+            #root-div .settings-section .color-theme-section .radio input + span:before, #root-div .settings-section .color-theme-section .radio input + span:after {
+              content: '';
+              width: 22px;
+              height: 22px;
+              display: block;
+              border-radius: 50%;
+              left: 0;
+              top: 0;
+              position: absolute; }
+            #root-div .settings-section .color-theme-section .radio input + span:before {
+              background: #D1D7E3;
+              transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2); }
+            #root-div .settings-section .color-theme-section .radio input + span:after {
+              background: #fff;
+              transform: scale(0.78);
+              transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4); }
+          #root-div .settings-section .color-theme-section .radio input:checked + span:before {
+            transform: scale(1.04);
+            background: #5D9BFB; }
+          #root-div .settings-section .color-theme-section .radio input:checked + span:after {
+            transform: scale(0.4);
+            transition: transform .3s ease; }
+        #root-div .settings-section .color-theme-section .radio:hover input + span:before {
+          transform: scale(0.92); }
+        #root-div .settings-section .color-theme-section .radio:hover input + span:after {
+          transform: scale(0.74); }
+        #root-div .settings-section .color-theme-section .radio:hover input:checked + span:after {
+          transform: scale(0.4); }
     #root-div .settings-section .about-me-section {
       width: 100%;
       height: 246px; }
