@@ -63,6 +63,8 @@ body{
    max-width: 600px;
   // border: 1px red solid;
 
+  
+
    .add-new-note-section{
     width:90%;
     height: 302px;
@@ -83,7 +85,7 @@ body{
         width: 100%;
         height: 30px;
         background-color:#E1DFDD;
-        border-radius: 8px 8px 0px 0px;///
+        border-radius: 8px 8px 0px 0px;
         @include alignItems();
         
         
@@ -220,6 +222,9 @@ body{
     }
 
    }
+   .opent-add-note-box{
+    animation: openAddNoteBox 1.5s 500ms alternate forwards;
+   }
 
   .settings-section{
     width: inherit;
@@ -227,9 +232,10 @@ body{
     position: absolute;
     background-color: inherit;
     max-width: 600px;
-    z-index: 100;
-    opacity: 1;
+    z-index: -100;
+    opacity: 0;
     border: 1px solid;
+
      hr{
         width: 50%;
         margin-left: 20%;
@@ -483,7 +489,10 @@ body{
     }
 
   }
-
+  .opent-setting-section{
+    animation: openSettingSection 400ms 300ms alternate forwards;
+  }
+    
    .head-section{
     width: 100%;
     height: 60px;
@@ -650,4 +659,42 @@ body{
         }
     }
    }
+}
+
+
+
+
+
+@keyframes openAddNoteBox{
+    from{
+        z-index: -100;
+        opacity: 0;
+    }
+    to{
+        z-index: 100;
+        opacity: 1;
+    }
+}
+
+@keyframes openSettingSection {
+   0%{
+        z-index: -100;
+        opacity: 0;
+    }
+    20%{
+        opacity: 0.2;
+    }
+    30%{
+        opacity: 0.3;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    100%{
+        z-index: 100;
+        opacity: 1;
+    }
 }
