@@ -13,6 +13,55 @@ body {
   background-color: #FFFFFF;
   min-width: 300px;
   max-width: 600px; }
+  #root-div .delete-box {
+    width: 50%;
+    height: 210px;
+    border: 1px #008bd5 solid;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 2%;
+    max-width: 437px;
+    min-width: 381px;
+    border-radius: 4px;
+    z-index: -100;
+    opacity: 0;
+    background-color: inherit; }
+    #root-div .delete-box .text-box {
+      font-size: 1.3rem;
+      margin-top: 35px;
+      margin-left: 20px; }
+    #root-div .delete-box label {
+      font-size: 1.1rem;
+      margin-left: 20px; }
+    #root-div .delete-box input {
+      width: 20px;
+      height: 20px;
+      margin-left: 20px;
+      margin-top: 10px;
+      background-color: #008bd5; }
+    #root-div .delete-box .button-box {
+      width: 350px;
+      height: 80px;
+      border: 1px red solid;
+      margin-left: 20px; }
+      #root-div .delete-box .button-box button {
+        width: 130px;
+        height: 40px;
+        color: black;
+        margin-left: 30px;
+        margin-top: 15px;
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        background-color: #008bd5;
+        border-radius: 2px; }
+        #root-div .delete-box .button-box button:hover {
+          background-color: #EEEEEE; }
+      #root-div .delete-box .button-box .keep-button {
+        background-color: #777777; }
+  #root-div .open-delete-box {
+    animation: openDeleteBox  500ms 200ms alternate forwards; }
   #root-div .add-new-note-section {
     width: 90%;
     height: 302px;
@@ -475,6 +524,16 @@ body {
           margin-left: 4px;
           font-size: 0.9rem; }
 
+@keyframes openDeleteBox {
+  0% {
+    z-index: -100;
+    opacity: 0; }
+  50% {
+    z-index: -50;
+    opacity: 0.5; }
+  100% {
+    z-index: 100;
+    opacity: 1; } }
 @keyframes openAddNoteBox {
   from {
     z-index: -100;
