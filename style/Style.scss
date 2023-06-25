@@ -135,6 +135,75 @@ body{
     border-radius: 8px;
     box-shadow: 20px 20px 60px grey;
 
+    .drop-down-section{
+        width: 100%;
+        height: 60%;
+        position: absolute;
+        z-index: -100;
+      //  border: 1px solid;
+        opacity: 0;
+        border-radius: 8px 8px 0px 0px;
+        background-color: #ffffff;///need to change
+        transform: translateY(-15px);
+
+
+        .note-color-section{
+            width: 100%;
+            height: 60px;
+            display: flex;
+
+            button{
+                width: 60px;
+                height: 60px;
+                @include buttonStyle();
+               // border: 0.5px red solid;
+            }
+        }
+
+        .drop-down-option-section{
+            width: 100%;
+            height: 120px;
+           // border: 1px red solid;
+
+            .bt-section-tow{
+                width: 100%;
+                height: 60px;
+                display: block;
+                @include buttonStyle();
+
+                i{
+                    font-size : 1.5rem;
+                    margin-right: 80px;
+                }
+            }
+        }
+
+        .close-drop-down-section{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 50;
+            color: #000000;
+            opacity: 0.6;
+
+            .close-drop-down-bt{
+                margin: 35px auto;
+                display: block;
+                margin-bottom: 0px;
+                @include buttonStyle();
+
+                .bi-x{
+                    font-size: 1.4rem;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .open-drop-down {
+        animation:  openDropDown 100ms 100ms alternate forwards;
+    }
+
 
     .add-new-head-section{
         width: 100%;
@@ -278,7 +347,7 @@ body{
 
    }
    .opent-add-note-box{
-    animation: openAddNoteBox 1.5s 500ms alternate forwards;
+    animation: openAddNoteBox 150ms 200ms alternate forwards;
    }
 
   .settings-section{
@@ -714,6 +783,31 @@ body{
         }
     }
    }
+}
+
+
+
+@keyframes openDropDown {
+    0%{
+        opacity: 0;
+        z-index: -100;
+        transform: translateY(-15px);
+    }
+    50%{
+        opacity: 0.5;
+        z-index: -50;
+        transform: translateY(-10px)
+    }
+    70%{
+        opacity: 0.8;
+        z-index: -20;
+        transform: translateY(-5px)
+    }
+    100%{
+        opacity: 1;
+        z-index: 100;
+        transform: translateY(0px)
+    }
 }
 
 

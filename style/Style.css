@@ -76,6 +76,66 @@ body {
     margin-top: 100px;
     border-radius: 8px;
     box-shadow: 20px 20px 60px grey; }
+    #root-div .add-new-note-section .drop-down-section {
+      width: 100%;
+      height: 60%;
+      position: absolute;
+      z-index: -100;
+      opacity: 0;
+      border-radius: 8px 8px 0px 0px;
+      background-color: #ffffff;
+      transform: translateY(-15px); }
+      #root-div .add-new-note-section .drop-down-section .note-color-section {
+        width: 100%;
+        height: 60px;
+        display: flex; }
+        #root-div .add-new-note-section .drop-down-section .note-color-section button {
+          width: 60px;
+          height: 60px;
+          border: none;
+          background: none;
+          outline: none;
+          cursor: pointer; }
+          #root-div .add-new-note-section .drop-down-section .note-color-section button:hover {
+            background-color: #EEEEEE; }
+      #root-div .add-new-note-section .drop-down-section .drop-down-option-section {
+        width: 100%;
+        height: 120px; }
+        #root-div .add-new-note-section .drop-down-section .drop-down-option-section .bt-section-tow {
+          width: 100%;
+          height: 60px;
+          display: block;
+          border: none;
+          background: none;
+          outline: none;
+          cursor: pointer; }
+          #root-div .add-new-note-section .drop-down-section .drop-down-option-section .bt-section-tow:hover {
+            background-color: #EEEEEE; }
+          #root-div .add-new-note-section .drop-down-section .drop-down-option-section .bt-section-tow i {
+            font-size: 1.5rem;
+            margin-right: 80px; }
+      #root-div .add-new-note-section .drop-down-section .close-drop-down-section {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 50;
+        color: #000000;
+        opacity: 0.6; }
+        #root-div .add-new-note-section .drop-down-section .close-drop-down-section .close-drop-down-bt {
+          margin: 35px auto;
+          display: block;
+          margin-bottom: 0px;
+          border: none;
+          background: none;
+          outline: none;
+          cursor: pointer; }
+          #root-div .add-new-note-section .drop-down-section .close-drop-down-section .close-drop-down-bt:hover {
+            background-color: #EEEEEE; }
+          #root-div .add-new-note-section .drop-down-section .close-drop-down-section .close-drop-down-bt .bi-x {
+            font-size: 1.4rem;
+            color: black; }
+    #root-div .add-new-note-section .open-drop-down {
+      animation: openDropDown 100ms 100ms alternate forwards; }
     #root-div .add-new-note-section .add-new-head-section {
       width: 100%;
       height: 30px;
@@ -214,7 +274,7 @@ body {
         #root-div .add-new-note-section .option-section .add-voice .bi-mic {
           font-size: 1.1rem; }
   #root-div .opent-add-note-box {
-    animation: openAddNoteBox 1.5s 500ms alternate forwards; }
+    animation: openAddNoteBox 150ms 200ms alternate forwards; }
   #root-div .settings-section {
     width: inherit;
     height: inherit;
@@ -524,6 +584,23 @@ body {
           margin-left: 4px;
           font-size: 0.9rem; }
 
+@keyframes openDropDown {
+  0% {
+    opacity: 0;
+    z-index: -100;
+    transform: translateY(-15px); }
+  50% {
+    opacity: 0.5;
+    z-index: -50;
+    transform: translateY(-10px); }
+  70% {
+    opacity: 0.8;
+    z-index: -20;
+    transform: translateY(-5px); }
+  100% {
+    opacity: 1;
+    z-index: 100;
+    transform: translateY(0px); } }
 @keyframes openDeleteBox {
   0% {
     z-index: -100;
