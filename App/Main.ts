@@ -13,6 +13,8 @@ const closeDropDown = document.querySelector('.close-drop-down-bt');
 const testRadioButton = document.getElementById('test')
 const radiobutton = testRadioButton?.querySelectorAll('input');
 
+
+
 const upDateColorThem = (currentColorThem : string)=>{
   console.log(currentColorThem)
 }
@@ -23,7 +25,6 @@ const getCurrentColorThem = (e: any)=>{
    upDateColorThem(e.target.value)
   }
 }
-
 
 
 
