@@ -58,9 +58,10 @@ body{
 #root-div{
    width: 100vw;
    height: 100vh;
-   background-color: #FFFFFF;
+   background-color: #202020;
    min-width: 300px;
    max-width: 600px;
+   color: #FFFFFF;
   // border: 1px red solid;
   .delete-box{
     width: 50%;
@@ -223,6 +224,7 @@ body{
 
             .bi-plus-lg{
                 font-size: 1.1rem;
+                color: inherit;
             }
 
         }

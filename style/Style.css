@@ -10,9 +10,10 @@ body {
 #root-div {
   width: 100vw;
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #202020;
   min-width: 300px;
-  max-width: 600px; }
+  max-width: 600px;
+  color: #FFFFFF; }
   #root-div .delete-box {
     width: 50%;
     height: 210px;
@@ -155,7 +156,8 @@ body {
         #root-div .add-new-note-section .add-new-head-section .add-another-note-bt:hover {
           background-color: #EEEEEE; }
         #root-div .add-new-note-section .add-new-head-section .add-another-note-bt .bi-plus-lg {
-          font-size: 1.1rem; }
+          font-size: 1.1rem;
+          color: inherit; }
       #root-div .add-new-note-section .add-new-head-section .option-button {
         width: 30px;
         height: 30px;
