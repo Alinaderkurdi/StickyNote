@@ -1,26 +1,54 @@
-//just simpel function to test app animation!!
 
-const settingButton = document.querySelector('.settings-button');
-const addNewNoteButton = document.querySelector('.add-new-note-button');
-const settingSection = document.querySelector('.settings-section');
-const addNewNoteBox = document.querySelector('.add-new-note-section');
-const deleteBox = document.querySelector('.delete-box');
-const closeNoteBt = document.querySelector('.close-button');
-const settingBackButton = document.querySelector('.back-button');
-const opendraopdownButton = document.querySelector('.option-button');
-const dropDownSection = document.querySelector('.drop-down-section');
-const closeDropDown = document.querySelector('.close-drop-down-bt');
+import { getCurrentMousePosition as moveNoteBox } from "./FloatNote.js";
+import  * as  domUtality   from "./ElementRefrence.js";
+
+import { pageTerminal as PageControler } from "./PageControler.js";
+
+
+
 const testRadioButton = document.getElementById('test')
 const radiobutton = testRadioButton?.querySelectorAll('input');
+const colorButtonGroup = document.getElementById('color-button-note-bk')
 
 
 
-const upDateColorThem = (currentColorThem : string)=>{
-  console.log(currentColorThem)
+
+
+let APPCLORBACKGROUND : string;
+
+
+
+const addColorToNote = (headSectioncolor: string, mainSectionColor: string)=>{
+   const addNewNoteHead = document.querySelector('.add-new-head-section')!
+   const addNewNoteSection = document.querySelector('.add-new-note-section')!
+   if(APPCLORBACKGROUND === 'dark'){
+       addNewNoteHead.style['background-color'] = headSectioncolor;
+       addNewNoteSection.style['background-color'] = '#333333';
+       addNewNoteSection.style['border-top'] = `3px; solid ${headSectioncolor}`;
+   }else if(APPCLORBACKGROUND === 'light'){
+      addNewNoteHead.style['background-color'] = headSectioncolor;
+      addNewNoteSection.style['background-color'] = mainSectionColor;
+   }
 }
 
 
-const getCurrentColorThem = (e: any)=>{
+const getNoteColor = (e: any)=>{//S-A1
+   addColorToNote(e.target.value, e.target.style['background-color']);
+}
+
+//const getValue = (event: any , callBack: (inputValue: string)=>{})=>{
+   //console.log(event)
+   //callBack(event.target.value)
+//}
+
+const upDateColorThem = (currentColorThem : string)=>{
+   APPCLORBACKGROUND = currentColorThem
+  console.log(currentColorThem)
+  console.log(APPCLORBACKGROUND)
+}
+
+
+const getCurrentColorThem = (e: any)=>{//S-A1
   if(e.target.tagName === 'INPUT'){
    upDateColorThem(e.target.value)
   }
@@ -28,92 +56,44 @@ const getCurrentColorThem = (e: any)=>{
 
 
 
-const pageTerminal = (elementRefrence : any, elementCalss: string, operation: string)=>{
-   if(operation === 'OPEN'){
-      elementRefrence?.classList.add(elementCalss)
-   }else{
-      elementRefrence?.classList.remove(elementCalss)
-   }
-}
 
-
-//
-const createNestedElement = (nestElement, parentElement)=>{
-   let {addOrNot , ...newElementObject} = nestElement
-   let parentElementRefrense = parentElement;
-   for(let i = 0 ; i < newElementObject.numberOfElement ; i++){
-       const nestElementName = document.createElement(newElementObject.elementName)
-       nestElementName.className = newElementObject.elementscalssName[i]
-       nestElementName.textContent = newElementObject.elementsTextContent[i]
-       parentElementRefrense.appendChild(nestElementName)
-
-   }
-   return parentElementRefrense;
-}
-
-const createNewElement = (
-   NameElment:string,
-   elementCalssName:string,
-   elementText:string| null = null,
-   CreateChildElementObject:object = {}
-)=>{
-   console.log(CreateChildElementObject)
- // const test = {...CreateChildElementObject}
-  //console.log(test)
-  let newElement =  document.createElement(NameElment)!
-   newElement.className = elementCalssName
-   newElement.textContent = elementText
-   return CreateChildElementObject.addOrNot ? createNestedElement(CreateChildElementObject, newElement) : newElement
-}
-
-
- 
-const createNoteHolder = ()=>{
-  return createNewElement('li', 'singel-note', null, {
-      addOrNot: true,
-      elementName : 'p',
-      numberOfElement : 2,
-      elementscalssName : [
-         'note-date',
-         'content'
-      ],
-      elementsTextContent :[
-         'hi',
-         'someDumy test'
-      ]
-   } )
-
-}
+colorButtonGroup?.addEventListener('click' , getNoteColor)
 
 
 testRadioButton?.addEventListener('click', getCurrentColorThem)
 
 
-closeDropDown?.addEventListener('click', ()=>{
-   pageTerminal(dropDownSection, 'open-drop-down', 'CLOSE')
+domUtality.getSingelDomElement('hold-button')?.addEventListener('mousedown', ()=>{
+   window.addEventListener('mousemove', moveNoteBox)
 })
 
-opendraopdownButton?.addEventListener('click', ()=>{
-   pageTerminal(dropDownSection, 'open-drop-down', 'OPEN')
-})
-
-
-settingBackButton?.addEventListener('click', ()=>{
-   pageTerminal(settingSection, 'opent-setting-section', 'CLOSE')
+domUtality.getSingelDomElement('hold-button')?.addEventListener('mouseup', ()=>{
+   window.removeEventListener('mousemove', moveNoteBox)
 })
 
 
-closeNoteBt?.addEventListener('click', ()=>{
-   pageTerminal(addNewNoteBox, 'opent-add-note-box', 'CLOSE')
+domUtality.getSingelDomElement('close-drop-down-bt')?.addEventListener('click', ()=>{
+   PageControler(domUtality.getSingelDomElement('drop-down-section'), 'open-drop-down', 'CLOSE')
+})
+
+domUtality.getSingelDomElement('option-button')?.addEventListener('click', ()=>{
+   PageControler(domUtality.getSingelDomElement('drop-down-section'), 'open-drop-down', 'OPEN')
 })
 
 
-addNewNoteButton?.addEventListener('click', ()=>{
-   pageTerminal(addNewNoteBox, 'opent-add-note-box','OPEN');
+domUtality.getSingelDomElement('close-button')?.addEventListener('click', ()=>{
+   PageControler(domUtality.getSingelDomElement('add-new-note-section'), 'opent-add-note-box', 'CLOSE')
 })
 
+domUtality.getSingelDomElement('add-new-note-button')?.addEventListener('click', ()=>{
+   PageControler(domUtality.getSingelDomElement('add-new-note-section'), 'opent-add-note-box','OPEN')
+})
 
-settingButton?.addEventListener('click', ()=>{
-   pageTerminal(settingSection, 'opent-setting-section', 'OPEN');
+domUtality.getSingelDomElement('back-button')?.addEventListener('click', ()=>{
+   PageControler(domUtality.getSingelDomElement('settings-section'), 'opent-setting-section', 'CLOSE')
+})
+
+domUtality.getSingelDomElement('settings-button')?.addEventListener('click', ()=>{
+   PageControler(domUtality.getSingelDomElement('settings-section'), 'opent-setting-section', 'OPEN')
 })
 

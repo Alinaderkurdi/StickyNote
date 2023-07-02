@@ -1,96 +1,64 @@
-"use strict";
-//just simpel function to test app animation!!
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-const settingButton = document.querySelector('.settings-button');
-const addNewNoteButton = document.querySelector('.add-new-note-button');
-const settingSection = document.querySelector('.settings-section');
-const addNewNoteBox = document.querySelector('.add-new-note-section');
-const deleteBox = document.querySelector('.delete-box');
-const closeNoteBt = document.querySelector('.close-button');
-const settingBackButton = document.querySelector('.back-button');
-const opendraopdownButton = document.querySelector('.option-button');
-const dropDownSection = document.querySelector('.drop-down-section');
-const closeDropDown = document.querySelector('.close-drop-down-bt');
+var _a, _b, _c, _d, _e, _f, _g, _h;
+import { getCurrentMousePosition as moveNoteBox } from "./FloatNote.js";
+import * as domUtality from "./ElementRefrence.js";
+import { pageTerminal as PageControler } from "./PageControler.js";
 const testRadioButton = document.getElementById('test');
 const radiobutton = testRadioButton === null || testRadioButton === void 0 ? void 0 : testRadioButton.querySelectorAll('input');
+const colorButtonGroup = document.getElementById('color-button-note-bk');
+let APPCLORBACKGROUND;
+const addColorToNote = (headSectioncolor, mainSectionColor) => {
+    const addNewNoteHead = document.querySelector('.add-new-head-section');
+    const addNewNoteSection = document.querySelector('.add-new-note-section');
+    if (APPCLORBACKGROUND === 'dark') {
+        addNewNoteHead.style['background-color'] = headSectioncolor;
+        addNewNoteSection.style['background-color'] = '#333333';
+        addNewNoteSection.style['border-top'] = `3px; solid ${headSectioncolor}`;
+    }
+    else if (APPCLORBACKGROUND === 'light') {
+        addNewNoteHead.style['background-color'] = headSectioncolor;
+        addNewNoteSection.style['background-color'] = mainSectionColor;
+    }
+};
+const getNoteColor = (e) => {
+    addColorToNote(e.target.value, e.target.style['background-color']);
+};
+//const getValue = (event: any , callBack: (inputValue: string)=>{})=>{
+//console.log(event)
+//callBack(event.target.value)
+//}
 const upDateColorThem = (currentColorThem) => {
+    APPCLORBACKGROUND = currentColorThem;
     console.log(currentColorThem);
+    console.log(APPCLORBACKGROUND);
 };
 const getCurrentColorThem = (e) => {
     if (e.target.tagName === 'INPUT') {
         upDateColorThem(e.target.value);
     }
 };
-const pageTerminal = (elementRefrence, elementCalss, operation) => {
-    if (operation === 'OPEN') {
-        elementRefrence === null || elementRefrence === void 0 ? void 0 : elementRefrence.classList.add(elementCalss);
-    }
-    else {
-        elementRefrence === null || elementRefrence === void 0 ? void 0 : elementRefrence.classList.remove(elementCalss);
-    }
-};
-//
-const createNestedElement = (nestElement, parentElement) => {
-    let { addOrNot } = nestElement, newElementObject = __rest(nestElement, ["addOrNot"]);
-    let parentElementRefrense = parentElement;
-    for (let i = 0; i < newElementObject.numberOfElement; i++) {
-        const nestElementName = document.createElement(newElementObject.elementName);
-        nestElementName.className = newElementObject.elementscalssName[i];
-        nestElementName.textContent = newElementObject.elementsTextContent[i];
-        parentElementRefrense.appendChild(nestElementName);
-    }
-    return parentElementRefrense;
-};
-const createNewElement = (NameElment, elementCalssName, elementText = null, CreateChildElementObject = {}) => {
-    console.log(CreateChildElementObject);
-    // const test = {...CreateChildElementObject}
-    //console.log(test)
-    let newElement = document.createElement(NameElment);
-    newElement.className = elementCalssName;
-    newElement.textContent = elementText;
-    return CreateChildElementObject.addOrNot ? createNestedElement(CreateChildElementObject, newElement) : newElement;
-};
-const createNoteHolder = () => {
-    return createNewElement('li', 'singel-note', null, {
-        addOrNot: true,
-        elementName: 'p',
-        numberOfElement: 2,
-        elementscalssName: [
-            'note-date',
-            'content'
-        ],
-        elementsTextContent: [
-            'hi',
-            'someDumy test'
-        ]
-    });
-};
+colorButtonGroup === null || colorButtonGroup === void 0 ? void 0 : colorButtonGroup.addEventListener('click', getNoteColor);
 testRadioButton === null || testRadioButton === void 0 ? void 0 : testRadioButton.addEventListener('click', getCurrentColorThem);
-closeDropDown === null || closeDropDown === void 0 ? void 0 : closeDropDown.addEventListener('click', () => {
-    pageTerminal(dropDownSection, 'open-drop-down', 'CLOSE');
+(_a = domUtality.getSingelDomElement('hold-button')) === null || _a === void 0 ? void 0 : _a.addEventListener('mousedown', () => {
+    window.addEventListener('mousemove', moveNoteBox);
 });
-opendraopdownButton === null || opendraopdownButton === void 0 ? void 0 : opendraopdownButton.addEventListener('click', () => {
-    pageTerminal(dropDownSection, 'open-drop-down', 'OPEN');
+(_b = domUtality.getSingelDomElement('hold-button')) === null || _b === void 0 ? void 0 : _b.addEventListener('mouseup', () => {
+    window.removeEventListener('mousemove', moveNoteBox);
 });
-settingBackButton === null || settingBackButton === void 0 ? void 0 : settingBackButton.addEventListener('click', () => {
-    pageTerminal(settingSection, 'opent-setting-section', 'CLOSE');
+(_c = domUtality.getSingelDomElement('close-drop-down-bt')) === null || _c === void 0 ? void 0 : _c.addEventListener('click', () => {
+    PageControler(domUtality.getSingelDomElement('drop-down-section'), 'open-drop-down', 'CLOSE');
 });
-closeNoteBt === null || closeNoteBt === void 0 ? void 0 : closeNoteBt.addEventListener('click', () => {
-    pageTerminal(addNewNoteBox, 'opent-add-note-box', 'CLOSE');
+(_d = domUtality.getSingelDomElement('option-button')) === null || _d === void 0 ? void 0 : _d.addEventListener('click', () => {
+    PageControler(domUtality.getSingelDomElement('drop-down-section'), 'open-drop-down', 'OPEN');
 });
-addNewNoteButton === null || addNewNoteButton === void 0 ? void 0 : addNewNoteButton.addEventListener('click', () => {
-    pageTerminal(addNewNoteBox, 'opent-add-note-box', 'OPEN');
+(_e = domUtality.getSingelDomElement('close-button')) === null || _e === void 0 ? void 0 : _e.addEventListener('click', () => {
+    PageControler(domUtality.getSingelDomElement('add-new-note-section'), 'opent-add-note-box', 'CLOSE');
 });
-settingButton === null || settingButton === void 0 ? void 0 : settingButton.addEventListener('click', () => {
-    pageTerminal(settingSection, 'opent-setting-section', 'OPEN');
+(_f = domUtality.getSingelDomElement('add-new-note-button')) === null || _f === void 0 ? void 0 : _f.addEventListener('click', () => {
+    PageControler(domUtality.getSingelDomElement('add-new-note-section'), 'opent-add-note-box', 'OPEN');
+});
+(_g = domUtality.getSingelDomElement('back-button')) === null || _g === void 0 ? void 0 : _g.addEventListener('click', () => {
+    PageControler(domUtality.getSingelDomElement('settings-section'), 'opent-setting-section', 'CLOSE');
+});
+(_h = domUtality.getSingelDomElement('settings-button')) === null || _h === void 0 ? void 0 : _h.addEventListener('click', () => {
+    PageControler(domUtality.getSingelDomElement('settings-section'), 'opent-setting-section', 'OPEN');
 });
