@@ -20,12 +20,13 @@ const config = {
     devServer: {
         open: true,
         host: 'localhost',
+        port: 3000
     },
     stats : {
         children: true
     },
     resolve : {
-        extensions : [".ts", ".js"]
+        extensions : [".ts", ".js",".css"]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -53,6 +54,7 @@ const config = {
             },
             {
                 test: /.([cm]?ts|tsx)$/,
+                exclude: /node_modules/,
                 loader: 'ts-loader',
             },
             // Add your rules for custom modules here
@@ -73,3 +75,9 @@ module.exports = () => {
     }
     return config;
 };
+
+//{ 
+ //   test: /\.css$/, 
+ //   use: ['style-loader', 'css-loader'], 
+ //   exclude: /node_modules/ 
+//},
