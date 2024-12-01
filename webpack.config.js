@@ -39,7 +39,8 @@ const config = {
         new CopyWebpackPlugin({
             patterns: [
                 {from: 'icons', to: 'icons'},
-                {from: 'manifest.json', to: 'manifest.json'}
+                {from: 'manifest.json', to: 'manifest.json'},
+                {from:'favicon', to:'favicon'}
             ]
         })
     ],
