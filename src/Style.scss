@@ -35,6 +35,8 @@ $radioActive: #5D9BFB;
 
 body{
     font-family:  'Catamaran', sans-serif;
+   // background-color: red;
+    width: 100%;
 }
 
 @mixin alignItems(){
@@ -55,14 +57,17 @@ body{
 }
 
 
+.root {
+    border: 1px red solid;
+}
+
+
 #root-div{
-   width: 100vw;
    height: 100vh;
    background-color: #202020;
-   min-width: 300px;
-   max-width: 600px;
+   //min-width: 300px;
+   //max-width: 600px;
    color: #FFFFFF;
-  // border: 1px red solid;
   .delete-box{
     width: 50%;
     height: 210px;
@@ -620,7 +625,8 @@ body{
   }
     
    .head-section{
-    width: 100%;
+    border: 1px burlywood solid;
+    width: 50%;
     height: 60px;
     //border: 1px  solid;
     @include alignItems();
@@ -671,10 +677,10 @@ body{
    }
 
    .app-name-section{
-    width: 100%;
+    width: 50%;
     height: 30px;
     margin-top: 2px;
-   // border: 1px red solid;
+    border: 1px red solid;
 
     .app-name-tag{
         font-size: 1.4rem;
@@ -686,9 +692,9 @@ body{
    }
 
    .search-section{
-    width: 100%;
+    width: 50%;
     height: 40px;
-  //  border: 1px red solid;
+    border: 1px red solid;
     margin-top: 4px;
 
     .input-fild{
@@ -723,7 +729,7 @@ body{
    }
 
    .note-holder-section{
-    width: 100%;
+    width: 50%;
     height: 633px;
    // border: 1px solid;
     margin-top: 20px;
