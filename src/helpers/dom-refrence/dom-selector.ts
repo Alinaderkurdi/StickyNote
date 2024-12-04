@@ -1,5 +1,5 @@
 export  const getSingelDomElement = (elementClassName: string)=>{
-    return document.querySelector(`${elementClassName}`)
+    return document.querySelector(`.${elementClassName}`)
 }
 
 
