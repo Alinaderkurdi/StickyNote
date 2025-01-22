@@ -6,6 +6,9 @@
 import type {Config} from 'jest';
 
 const config: Config = {
+  preset: 'ts-jest', 
+  //testEnvironment: 'jsdom',
+  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -20,6 +23,7 @@ const config: Config = {
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
@@ -34,6 +38,10 @@ const config: Config = {
 
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest', 
+    // Use ts-jest to process TypeScript files
+  },
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -78,6 +86,7 @@ const config: Config = {
   // ],
 
   // An array of file extensions your modules use
+  moduleFileExtensions : ["js", "ts", "json"],
   // moduleFileExtensions: [
   //   "js",
   //   "mjs",
@@ -88,6 +97,9 @@ const config: Config = {
   //   "json",
   //   "node"
   // ],
+
+
+  verbose: true,
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
