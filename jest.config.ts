@@ -8,42 +8,35 @@ import type {Config} from 'jest';
 const config: Config = {
   testMatch: ['**/*.test.ts', '**/*.spec.ts'],
   preset: 'ts-jest', 
-  //testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\alina\\AppData\\Local\\Temp\\jest",
-
-  // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
-
-  // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
-
-  // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
-
-  // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
-
-  // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
-
-  // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest', 
     // Use ts-jest to process TypeScript files
   },
-
+  verbose: true,
+  moduleFileExtensions : ["js", "ts", "json"],
+  //testEnvironment: 'jsdom',
+  // All imported modules in your tests should be mocked automatically
+  // automock: false,
+  // Stop running tests after `n` failures
+  // bail: 0,
+  // The directory where Jest should store its cached dependency information
+  // cacheDirectory: "C:\\Users\\alina\\AppData\\Local\\Temp\\jest",
+  // Automatically clear mock calls, instances, contexts and results before every test
+  // Indicates whether the coverage information should be collected while executing the test
+  // An array of glob patterns indicating a set of files for which coverage information should be collected
+  // collectCoverageFrom: undefined,
+  // The directory where Jest should output its coverage files
+  // An array of regexp pattern strings used to skip coverage collection
+  // coveragePathIgnorePatterns: [
+  //   "\\\\node_modules\\\\"
+  // ],
+  // Indicates which provider should be used to instrument code for coverage
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
   //   "json",
@@ -85,9 +78,7 @@ const config: Config = {
   // moduleDirectories: [
   //   "node_modules"
   // ],
-
   // An array of file extensions your modules use
-  moduleFileExtensions : ["js", "ts", "json"],
   // moduleFileExtensions: [
   //   "js",
   //   "mjs",
@@ -98,10 +89,6 @@ const config: Config = {
   //   "json",
   //   "node"
   // ],
-
-
-  verbose: true,
-
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
 
