@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -42,6 +43,10 @@ const config = {
                 {from: 'manifest.json', to: 'manifest.json'},
                 {from:'favicon', to:'favicon'}
             ]
+        }),
+        new ESLintPlugin({
+            extensions : ["ts","js"],
+            emitWarning : true
         })
     ],
     module: {
