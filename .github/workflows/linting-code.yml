@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
     lint: 
-       runs-on: ubuntu-latest 
+       runs-on: ubuntu-latest
        steps:
-            - name: prit message
-                run: echo "run the linting jobs!"
+            - name: print message
+            run: echo 'linting code'!
