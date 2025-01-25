@@ -1,0 +1,10 @@
+name: linting
+
+on: workflow_dispatch
+
+jobs:
+    lint: 
+       runs-on: ubuntu-latest 
+       steps:
+            - name: prit message
+                run: echo "run the linting jobs!"
