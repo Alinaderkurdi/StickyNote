@@ -1,10 +1,11 @@
-name: linting
+name: linting the code
 
-on: workflow_dispatch
+on : workflow_dispatch
 
 jobs:
-    lint: 
-       runs-on: ubuntu-latest
-       steps:
-            - name: linting message
-            run: echo "linting code"
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: lint the code
+              run: echo "linting the code"
+        
