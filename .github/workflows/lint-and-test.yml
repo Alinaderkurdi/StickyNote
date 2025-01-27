@@ -13,8 +13,15 @@ jobs:
             - name : install node js
               uses: actions/setup-node@v4 
               with:
-                node-version: '22.13.1'
+                node-version: 22.13.1
             - name: check node version
               run: node -v
+            - name : install node modules
+              run : npm ci 
+            - name: lint code
+              run : npm run lint
+            - name: fix the code
+              run : npm run lint:fix
+            
                      
         
