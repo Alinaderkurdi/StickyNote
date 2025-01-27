@@ -1,0 +1,20 @@
+name: lint and test
+
+on : workflow_dispatch
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: lint the code
+              run: echo "linting the code"
+            - name : get the code
+              uses: actions/checkout@v4
+            - name : install node js
+              uses: actions/setup-node@v4 
+              with:
+                node-version: '22.13.1'
+            - name: check node version
+              run: node -v
+                     
+        
