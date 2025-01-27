@@ -22,6 +22,19 @@ jobs:
               run : npm run lint
             - name: fix the code
               run : npm run lint:fix
-            
-                     
-        
+    test:
+        needs: lint
+        runs-on : ubuntu-latest
+        steps:
+            - name: test the code 
+              run : echo "test the code"
+            - name: get the code
+              uses: actions/checkout@v4
+            - name: install node js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 22.13.1
+            - name: install dependencies
+              run: npm ci
+            - name: run test command
+              run: npm run test
